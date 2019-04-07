@@ -1,0 +1,26 @@
+.commentAuthorContainer{
+    float: right;
+}
+
+.commentAuthor{
+    float: right;
+    padding-left: 2px;
+}
+
+.odd  {   background-color: #1a1a1b;} 
+.even {   background-color: rgb(25, 25, 30); }
+
+
+
+.black {
+    background-color: black;
+    border-color: black;
+}
+
+.whiteText {
+    color: rgb(111, 112, 113);
+}
+
+.noBorder {
+    border: 0;
+}

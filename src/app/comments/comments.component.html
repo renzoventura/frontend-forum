@@ -1,0 +1,28 @@
+
+<div class="row mt-3 form-control noBorder odd">
+    <div class="card odd">
+      <div class="card-body">
+        <h3 class="card-text whiteText">{{post.postTitle}}</h3> 
+        <p class="card-text whiteText">{{post.description}}</p>
+      </div>
+      <div class="card-footer">
+          <input [(ngModel)] = "comment.commentDescription" class="form-control odd" placeholder="Write a comment..."/>
+          <button (click)="sendComment()" class="btn btn-primary">Submit Comment</button>
+      </div>
+      <div *ngFor="let comment of comments;
+      odd as isOdd; 
+      even as isEven" 
+      [class.odd]="isOdd" 
+      [class.even]="isEven">
+        <div class="card-body border-top">
+            <p class="card-text whiteText">{{comment.commentDescription}}</p>
+            <div class="commentAuthorContainer">
+              By: <div class="text-primary commentAuthor">{{comment.account.username}}</div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,30 @@
+<div class="card text-center odd">
+  <div class="card-body ">
+    <input [(ngModel)] ="submitPost.postTitle" type="text" class="form-control odd" placeholder="Title..."> 
+    <textarea [(ngModel)] ="submitPost.description" type="text" class="form-control odd mt-2" style="resize: none;" placeholder="Write your story here..."></textarea>
+    <br>
+    <button (click)="sendPost()" class="btn btn-primary"> Submit Post! </button> 
+  </div>
+</div>
+
+
+<div class="row mt-3">
+  <div routerLink="/post/{{post.postId}}" class="col-md-12 mb-3" 
+  *ngFor="let post of posts; 
+  odd as isOdd; 
+  even as isEven">
+    <div class="card"   
+    [class.even]="isEven" [class.odd]="isOdd">
+      <div class="card-body">
+        <h3 class="card-text whiteText">{{post.postTitle}}</h3> 
+        <p class="card-title text-muted font-weight-light">Posted By: {{post.account.username}}</p>
+        <p class="card-text whiteText">{{post.description}}</p>
+      </div>
+      <div class="card-footer">
+          <p class="card-text text-primary">Comments ({{post.comments?.length}})</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
